@@ -10,6 +10,7 @@ export type Post = {
     date: string
     excerpt: string
     content: string
+    published?: boolean
 }
 
 export function getAllPosts(): Post[] {
@@ -33,9 +34,11 @@ export function getAllPosts(): Post[] {
                 title: data.title ?? "Untitled",
                 date: data.date ?? new Date().toISOString(),
                 excerpt: data.excerpt ?? "",
+                published: data.published !== false, // Default to true if not set
                 ...data,
             } as Post
         })
+        .filter((post) => post.published !== false) // Only show published posts
 
     return allPostsData.sort((a, b) => (new Date(a.date) < new Date(b.date) ? 1 : -1))
 }

@@ -1,8 +1,18 @@
-local_backend: true
+# For Production (GitHub OAuth)
+# Uncomment the github backend and comment out the proxy backend when deploying
 
 backend:
-  name: proxy
-  proxy_url: http://localhost:8081/api/v1
+  name: github
+  repo: utkukucuk/utku-blog  # Replace with your GitHub username/repo
+  branch: main
+  base_url: https://your-site.vercel.app  # Replace with your deployed site URL
+
+# For Local Development (uncomment below, comment above)
+# backend:
+#   name: proxy
+#   proxy_url: http://localhost:8081/api/v1
+
+# local_backend: true  # Enable this for local development
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
@@ -15,9 +25,7 @@ collections:
     slug: "{{slug}}"
     extension: "mdx"
     format: "frontmatter"
-    summary: "{{title}} | {{date}} | Status: {{published}}"
     fields:
-      - { label: "Published", name: "published", widget: "boolean", default: true }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
       - { label: "Excerpt", name: "excerpt", widget: "text" }
@@ -30,9 +38,7 @@ collections:
     slug: "{{slug}}"
     extension: "mdx"
     format: "frontmatter"
-    summary: "{{title}} | {{date}} | Status: {{published}}"
     fields:
-      - { label: "Published", name: "published", widget: "boolean", default: true }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
