@@ -14,7 +14,7 @@ export type Project = {
     githubUrl?: string
     liveUrl?: string
     content: string
-    published?: boolean
+    status?: "✅ Published" | "🔴 Draft"
 }
 
 export function getAllProjects(): Project[] {
@@ -42,11 +42,11 @@ export function getAllProjects(): Project[] {
                 image: data.image,
                 githubUrl: data.githubUrl,
                 liveUrl: data.liveUrl,
-                published: data.published !== false, // Default to true if not set
+                status: data.status ?? "✅ Published", // Default to Published if not set
                 ...data,
             } as Project
         })
-        .filter((project) => project.published !== false) // Only show published projects
+        .filter((project) => project.status !== "🔴 Draft") // Only show non-draft projects
 
     return allProjectsData.sort((a, b) => (new Date(a.date) < new Date(b.date) ? 1 : -1))
 }

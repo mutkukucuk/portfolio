@@ -15,9 +15,9 @@ collections:
     slug: "{{slug}}"
     extension: "mdx"
     format: "frontmatter"
-    summary: "{{title}} | {{date}} | Status: {{published}}"
+    summary: "{{title}} | {{date}} | {{status}}"
     fields:
-      - { label: "Published", name: "published", widget: "boolean", default: true }
+      - { label: "Status", name: "status", widget: "select", options: ["✅ Published", "🔴 Draft"], default: "✅ Published" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
       - { label: "Excerpt", name: "excerpt", widget: "text" }
@@ -30,9 +30,9 @@ collections:
     slug: "{{slug}}"
     extension: "mdx"
     format: "frontmatter"
-    summary: "{{title}} | {{date}} | Status: {{published}}"
+    summary: "{{title}} | {{date}} | {{status}}"
     fields:
-      - { label: "Published", name: "published", widget: "boolean", default: true }
+      - { label: "Status", name: "status", widget: "select", options: ["✅ Published", "🔴 Draft"], default: "✅ Published" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
