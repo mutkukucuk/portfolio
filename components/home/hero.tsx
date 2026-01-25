@@ -61,7 +61,7 @@ export function Hero() {
                             <div className="relative h-full w-full overflow-hidden rounded-full border-4 border-background shadow-2xl">
                                 {/* Placeholder for profile image - Use a nice gradient or initials if no image */}
                                 <div className="flex h-full w-full items-center justify-center bg-muted text-4xl font-bold text-muted-foreground">
-                                    UK
+                                    <img src="/me2.jpg" alt="Utku Kucuk" />
                                 </div>
                                 {/* <Image src="/profile.jpg" alt="Utku Kucuk" fill className="object-cover" /> */}
                             </div>

@@ -1,4 +1,7 @@
+"use client"
+
 import Link from "next/link"
+import Image from "next/image"
 import { Github, ExternalLink } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -9,6 +12,7 @@ interface ProjectCardProps {
     githubUrl?: string
     tags: string[]
     image?: string // Optional image
+    slug?: string // Internal slug for case study
     className?: string
 }
 
@@ -18,19 +22,36 @@ export function ProjectCard({
     href,
     githubUrl,
     tags,
+    image,
+    slug,
     className,
 }: ProjectCardProps) {
-    return (
+    const CardContent = (
         <div
             className={cn(
-                "group relative flex flex-col justify-between overflow-hidden rounded-xl border border-border/50 bg-background/50 p-6 transition-all hover:border-border hover:bg-background/80",
+                "group relative flex flex-col justify-between overflow-hidden rounded-xl border border-border/50 bg-background/50 transition-all hover:border-border hover:bg-background/80 h-full",
                 className
             )}
         >
-            <div className="flex flex-col gap-4">
+            {image ? (
+                <div className="relative aspect-video w-full overflow-hidden bg-muted">
+                    <Image
+                        src={image}
+                        alt={title}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                </div>
+            ) : (
+                <div className="relative aspect-video w-full overflow-hidden bg-muted flex items-center justify-center text-muted-foreground/20">
+                    <div className="h-full w-full bg-gradient-to-br from-muted/50 to-muted" />
+                </div>
+            )}
+
+            <div className="flex flex-col gap-4 p-6">
                 <div className="flex items-center justify-between">
-                    <h3 className="text-xl font-bold tracking-tight">{title}</h3>
-                    <div className="flex gap-2">
+                    <h3 className="text-xl font-bold tracking-tight group-hover:text-primary transition-colors">{title}</h3>
+                    <div className="flex gap-2 relative z-20" onClick={(e) => e.stopPropagation()}>
                         {githubUrl && (
                             <a
                                 href={githubUrl}
@@ -55,10 +76,10 @@ export function ProjectCard({
                         )}
                     </div>
                 </div>
-                <p className="text-muted-foreground">{description}</p>
+                <p className="text-muted-foreground line-clamp-3">{description}</p>
             </div>
 
-            <div className="mt-6 flex flex-wrap gap-2">
+            <div className="mt-auto px-6 pb-6 flex flex-wrap gap-2">
                 {tags.map((tag) => (
                     <span
                         key={tag}
@@ -70,4 +91,14 @@ export function ProjectCard({
             </div>
         </div>
     )
+
+    if (slug) {
+        return (
+            <Link href={`/projects/${slug}`} className="block h-full">
+                {CardContent}
+            </Link>
+        )
+    }
+
+    return CardContent
 }

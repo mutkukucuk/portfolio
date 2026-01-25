@@ -6,13 +6,14 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 
 interface PostPageProps {
-    params: {
+    params: Promise<{
         slug: string
-    }
+    }>
 }
 
 export async function generateMetadata({ params }: PostPageProps) {
-    const post = getPostBySlug(params.slug)
+    const { slug } = await params
+    const post = getPostBySlug(slug)
     if (!post) {
         return {}
     }
@@ -22,8 +23,9 @@ export async function generateMetadata({ params }: PostPageProps) {
     }
 }
 
-export default function PostPage({ params }: PostPageProps) {
-    const post = getPostBySlug(params.slug)
+export default async function PostPage({ params }: PostPageProps) {
+    const { slug } = await params
+    const post = getPostBySlug(slug)
 
     if (!post) {
         notFound()
@@ -39,7 +41,11 @@ export default function PostPage({ params }: PostPageProps) {
                     <ArrowLeft className="mr-2 h-4 w-4" />
                     Back to Blog
                 </Link>
-                <article className="prose prose-zinc dark:prose-invert max-w-none">
+                <article className="prose prose-lg dark:prose-invert max-w-none 
+                    prose-headings:font-bold prose-headings:tracking-tight 
+                    prose-code:text-primary prose-code:bg-muted prose-code:rounded prose-code:px-1 prose-code:before:content-[''] prose-code:after:content-['']
+                    prose-a:text-primary prose-a:underline prose-a:underline-offset-4 hover:prose-a:text-primary/80
+                    prose-img:rounded-xl prose-img:border prose-img:border-border">
                     <div className="mb-8">
                         <time className="text-sm text-muted-foreground" dateTime={post.date}>
                             {new Date(post.date).toLocaleDateString()}
