@@ -3,7 +3,7 @@
 A modern, minimalist portfolio website built with **Next.js 14**, **Tailwind CSS**, and **Framer Motion**.  
 Designed to showcase backend engineering projects, skills, and professional experience with a clean, dark-themed UI.
 
-<img src="./public/file.svg" alt="Portfolio Preview" width="100" /> <!-- Replace with actual screenshot if available -->
+<img src="./public/portfolio-screenshot.png" alt="Portfolio Preview" width="100%" />
 
 ## 🚀 Features
 
