@@ -7,22 +7,34 @@ import { FadeIn, FadeInStagger, fadeInItemVariants } from "@/components/ui/fade-
 
 const experience = [
     {
-        company: "Tech Corp Inc.",
-        role: "Senior Full Stack Developer",
-        period: "2023 - Present",
-        description: "Leading a team of 5 developers to build scalable SaaS products. Implemented microservices architecture and improved system reliability by 99.9%.",
+        company: "Nova UAV Club",
+        role: "Software Developer",
+        period: "Nov 2024 - Apr 2025",
+        description: "Contributed to UAV-related image processing tasks using OpenCV. implemented frame processing, color segmentation, and object detection scenarios while validating camera data pipelines.",
     },
     {
-        company: "Creative Agency",
-        role: "Mid-Level Frontend Developer",
-        period: "2021 - 2023",
-        description: "Developed pixel-perfect user interfaces for high-profile clients. Utilized React, Next.js, and Framer Motion to create immersive experiences.",
+        company: "Covalent Coin",
+        role: "Remote Software Developer",
+        period: "Jun 2023 - Sep 2024",
+        description: "Developed backend services and designed data flows between services and client applications. Implemented API endpoints and supported system integration efforts in a distributed team environment.",
     },
     {
-        company: "StartUp Land",
-        role: "Junior Developer",
-        period: "2019 - 2021",
-        description: "Collaborated with cross-functional teams to ship features rapidly. Gained expertise in JavaScript, TypeScript, and version control.",
+        company: "Teknolojik Çözüm",
+        role: "Software Specialist",
+        period: "Aug 2022 - Feb 2023",
+        description: "Managed backend service deployment and Linux-based server environments. Containerized services using Docker and configured Nginx reverse proxies used for exposing secure services.",
+    },
+    {
+        company: "Bil Holding",
+        role: "Software Intern",
+        period: "Oct 2020 - Jan 2021",
+        description: "Developed frontend components for corporate web projects and provided support for mobile and IoT-based initiatives.",
+    },
+    {
+        company: "Kale Kalıp",
+        role: "Software Intern",
+        period: "Mar 2020 - May 2020",
+        description: "Assisted in backend-oriented development tasks and IoT-related projects involving device data processing. Supported implementation and testing of business logic modules.",
     },
 ]
 

@@ -7,7 +7,7 @@ export function Footer() {
                 <div className="flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
                     <p className="text-balance text-center text-sm leading-loose text-muted-foreground md:text-left">
                         Built by <span className="font-medium underline underline-offset-4">Utku Kucuk</span>.
-                        The source code is available on <a href="https://github.com" target="_blank" rel="noreferrer" className="font-medium underline underline-offset-4">GitHub</a>.
+                        The source code is available on <a href="https://github.com/mutkukucuk/portfolio" target="_blank" rel="noreferrer" className="font-medium underline underline-offset-4">GitHub</a>.
                     </p>
                 </div>
             </Container>

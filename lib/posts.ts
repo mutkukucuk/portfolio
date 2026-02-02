@@ -9,6 +9,7 @@ export type Post = {
     title: string
     date: string
     excerpt: string
+    image?: string
     content: string
     status?: "✅ Published" | "🔴 Draft"
 }
@@ -34,6 +35,7 @@ export function getAllPosts(): Post[] {
                 title: data.title ?? "Untitled",
                 date: data.date ?? new Date().toISOString(),
                 excerpt: data.excerpt ?? "",
+                image: data.image,
                 status: data.status ?? "✅ Published", // Default to Published if not set
                 ...data,
             } as Post

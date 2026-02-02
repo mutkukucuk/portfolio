@@ -21,17 +21,18 @@ export function Hero() {
                                 Utku Kucuk
                             </h1>
                             <h2 className="mt-4 text-2xl font-medium text-muted-foreground sm:text-3xl">
-                                Senior Full Stack Engineer
+                                Backend Software Engineer
                             </h2>
                         </div>
 
                         <p className="max-w-xl text-lg text-muted-foreground sm:text-xl leading-relaxed">
-                            I architect and build scalable web applications. Specializing in Modern React, Cloud Infrastructure, and Technical Leadership.
+                            I build robust backend systems and reliable cloud infrastructure. Passionate about clean code, automation, and solving real-world problems.
                         </p>
 
                         <div className="flex flex-wrap gap-4">
                             <a
-                                href="/resume.pdf" // Placeholder path
+                                href="/UTKU_KUCUK_CV_ENG.pdf"
+                                download="Utku_Kucuk_CV.pdf"
                                 className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                             >
                                 <Download className="mr-2 h-4 w-4" />

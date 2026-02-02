@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { Github, ExternalLink } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -11,7 +10,6 @@ interface ProjectCardProps {
     href?: string
     githubUrl?: string
     tags: string[]
-    image?: string // Optional image
     slug?: string // Internal slug for case study
     className?: string
 }
@@ -22,36 +20,22 @@ export function ProjectCard({
     href,
     githubUrl,
     tags,
-    image,
     slug,
     className,
 }: ProjectCardProps) {
-    const CardContent = (
+    return (
         <div
             className={cn(
                 "group relative flex flex-col justify-between overflow-hidden rounded-xl border border-border/50 bg-background/50 transition-all hover:border-border hover:bg-background/80 h-full",
                 className
             )}
         >
-            {image ? (
-                <div className="relative aspect-video w-full overflow-hidden bg-muted">
-                    <Image
-                        src={image}
-                        alt={title}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                </div>
-            ) : (
-                <div className="relative aspect-video w-full overflow-hidden bg-muted flex items-center justify-center text-muted-foreground/20">
-                    <div className="h-full w-full bg-gradient-to-br from-muted/50 to-muted" />
-                </div>
-            )}
+            {/* Main Card Link - Removed as per request */}
 
-            <div className="flex flex-col gap-4 p-6">
+            <div className="flex flex-col gap-4 p-6 pointer-events-none">
                 <div className="flex items-center justify-between">
                     <h3 className="text-xl font-bold tracking-tight group-hover:text-primary transition-colors">{title}</h3>
-                    <div className="flex gap-2 relative z-20" onClick={(e) => e.stopPropagation()}>
+                    <div className="flex gap-2 relative z-20 pointer-events-auto">
                         {githubUrl && (
                             <a
                                 href={githubUrl}
@@ -63,6 +47,7 @@ export function ProjectCard({
                                 <Github className="h-5 w-5" />
                             </a>
                         )}
+                        {/* Live Link - Hidden for now
                         {href && (
                             <a
                                 href={href}
@@ -74,12 +59,13 @@ export function ProjectCard({
                                 <ExternalLink className="h-5 w-5" />
                             </a>
                         )}
+                        */}
                     </div>
                 </div>
                 <p className="text-muted-foreground line-clamp-3">{description}</p>
             </div>
 
-            <div className="mt-auto px-6 pb-6 flex flex-wrap gap-2">
+            <div className="mt-auto px-6 pb-6 flex flex-wrap gap-2 pointer-events-none">
                 {tags.map((tag) => (
                     <span
                         key={tag}
@@ -91,14 +77,4 @@ export function ProjectCard({
             </div>
         </div>
     )
-
-    if (slug) {
-        return (
-            <Link href={`/projects/${slug}`} className="block h-full">
-                {CardContent}
-            </Link>
-        )
-    }
-
-    return CardContent
 }

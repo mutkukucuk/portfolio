@@ -33,8 +33,7 @@ export function BentoGrid() {
                         <div className="flex flex-col gap-2">
                             <h3 className="text-xl font-bold">Who I am</h3>
                             <p className="text-muted-foreground">
-                                I'm a passionate full-stack developer with a knack for building beautiful, functional web applications.
-                                I love turning complex problems into simple, elegant solutions.
+                                I'm a software engineer who enjoys working with backend technologies. I like building things that work well and scale easily. Whether it's setting up servers or writing API endpoints, I'm always happy to learn and build.
                             </p>
                         </div>
                         <div className="mt-8 flex gap-2">
@@ -54,7 +53,7 @@ export function BentoGrid() {
                         </div>
                         <div>
                             <h3 className="text-lg font-bold">Based in</h3>
-                            <p className="text-muted-foreground">Istanbul, Turkey</p>
+                            <p className="text-muted-foreground">İstanbul</p>
                         </div>
                     </motion.div>
 
@@ -63,7 +62,7 @@ export function BentoGrid() {
                         <div className="flex flex-col gap-2">
                             <h3 className="text-xl font-bold">Tech Stack</h3>
                             <div className="mt-4 flex flex-wrap gap-2">
-                                {["React", "Next.js", "TypeScript", "Tailwind", "Node.js", "PostgreSQL"].map((tech) => (
+                                {["Node.js", "Docker", "Linux", "Nginx", "PostgreSQL", "AWS", "Express.js"].map((tech) => (
                                     <span key={tech} className="rounded-md bg-secondary px-2 py-1 text-xs font-medium">
                                         {tech}
                                     </span>
@@ -83,7 +82,7 @@ export function BentoGrid() {
                         </div>
                         <div className="mt-4 flex gap-4">
                             <a
-                                href="https://github.com"
+                                href="https://github.com/mutkukucuk"
                                 target="_blank"
                                 rel="noreferrer"
                                 className="flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2 transition-colors hover:bg-accent hover:text-accent-foreground"
@@ -92,7 +91,7 @@ export function BentoGrid() {
                                 <span className="text-sm font-medium">GitHub</span>
                             </a>
                             <a
-                                href="https://linkedin.com"
+                                href="https://www.linkedin.com/in/muhammet-utku-kucuk/"
                                 target="_blank"
                                 rel="noreferrer"
                                 className="flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2 transition-colors hover:bg-accent hover:text-accent-foreground"
@@ -101,7 +100,7 @@ export function BentoGrid() {
                                 <span className="text-sm font-medium">LinkedIn</span>
                             </a>
                             <a
-                                href="mailto:example@example.com"
+                                href="mailto:muhammetutku@outlook.com"
                                 className="flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2 transition-colors hover:bg-accent hover:text-accent-foreground"
                             >
                                 <Mail className="h-5 w-5" />
