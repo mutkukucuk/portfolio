@@ -3,7 +3,7 @@
 A modern, minimalist portfolio website built with **Next.js 14**, **Tailwind CSS**, and **Framer Motion**.  
 Designed to showcase backend engineering projects, skills, and professional experience with a clean, dark-themed UI.
 
-![Portfolio Preview](./public/file.svg) <!-- Replace with actual screenshot if available -->
+<img src="./public/file.svg" alt="Portfolio Preview" width="100" /> <!-- Replace with actual screenshot if available -->
 
 ## 🚀 Features
 
@@ -71,4 +71,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-Built with ❤️ by [Utku Kucuk](https://github.com/mutkukucuk).
+Built by [Utku Kucuk](https://github.com/mutkukucuk).
