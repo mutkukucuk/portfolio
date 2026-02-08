@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Container } from "@/components/layout/container"
-import Link from "next/link"
+
 import { ArrowRight, Download, Mail } from "lucide-react"
 
 export function Hero() {
@@ -38,13 +38,13 @@ export function Hero() {
                                 <Download className="mr-2 h-4 w-4" />
                                 Download CV
                             </a>
-                            <Link
-                                href="#contact"
+                            <a
+                                href="mailto:muhammetutku@outlook.com"
                                 className="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                             >
                                 <Mail className="mr-2 h-4 w-4" />
                                 Contact Me
-                            </Link>
+                            </a>
                         </div>
                     </motion.div>
 
