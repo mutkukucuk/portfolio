@@ -16,8 +16,40 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Utku Kucuk | Developer",
-  description: "Personal portfolio and blog of Utku Kucuk.",
+  title: {
+    default: "Utku Kucuk | Developer",
+    template: "%s | Utku Kucuk",
+  },
+  description: "Personal portfolio of Utku Kucuk, a software engineer specializing in backend technologies and scalable applications.",
+  metadataBase: new URL("https://utkukucuk.com"),
+  keywords: ["Utku Kucuk", "Software Engineer", "Backend Developer", "Portfolio", "Web Development", "Node.js", "Java", "Spring Boot"],
+  authors: [{ name: "Utku Kucuk", url: "https://utkukucuk.com" }],
+  creator: "Utku Kucuk",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://utkukucuk.com",
+    title: "Utku Kucuk | Developer",
+    description: "Personal portfolio of Utku Kucuk, a software engineer specializing in backend technologies.",
+    siteName: "Utku Kucuk Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Utku Kucuk | Developer",
+    description: "Personal portfolio of Utku Kucuk, a software engineer specializing in backend technologies.",
+    creator: "@mutkukucuk", // Assuming this handle based on github/linkedin patterns or defaults
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({

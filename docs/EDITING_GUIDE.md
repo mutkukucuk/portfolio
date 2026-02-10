@@ -68,22 +68,7 @@ liveUrl: "https://mysite.com"
 Write your case study here...
 ```
 
-## 7. Blog Posts
-Your blog posts are located in the **`posts/`** folder.
-- To add a new post, create a new file ending in `.mdx` (e.g., `my-new-post.mdx`).
-- Use the following format at the top of the file (Frontmatter):
 
-```mdx
----
-title: "My New Post Title"
-date: "2024-03-20"
-excerpt: "A short summary of the post..."
----
-
-# Hello World
-
-Write your post content here using Markdown!
-```
 
 ## 7. Resume Download
 To update your resume:
