@@ -16,12 +16,6 @@ export default function Home() {
       <div id="experience">
         <Experience />
       </div>
-      <div id="skills">
-        <TechStack />
-      </div>
-      <div id="about">
-        <BentoGrid />
-      </div>
       <div id="projects">
         <Container className="py-24">
           <div className="flex flex-col gap-8">
@@ -50,6 +44,12 @@ export default function Home() {
             </FadeInStagger>
           </div>
         </Container>
+      </div>
+      <div id="skills">
+        <TechStack />
+      </div>
+      <div id="about">
+        <BentoGrid />
       </div>
     </main>
   );
